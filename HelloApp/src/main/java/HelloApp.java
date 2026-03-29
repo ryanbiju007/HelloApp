@@ -6,17 +6,14 @@ public class HelloApp {
 
         if (args.length > 0) {
             StringBuilder nameBuilder = new StringBuilder();
-            boolean first = true;
 
             for (String n : args) {
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-                nameBuilder.append(n);
-                first = false;
+                nameBuilder.append(n).append(", ");
             }
 
-            name = nameBuilder.toString();
+            if (nameBuilder.length() > 0) {
+                name = nameBuilder.substring(0, nameBuilder.length() - 2);
+            }
         }
 
         System.out.println("Hello, " + name + "!");
